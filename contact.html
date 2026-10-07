@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>About Page</title>
+	<title>Contact Page</title>
 </head>
 <body>
 	<header>
@@ -13,12 +13,65 @@
 				<li><a href="about.html">About Page</a></li>
 				<li><a href="index.html">Index Page</a></li>
 				<li><a href="projects.html">Projects Page</a></li>
+                <li><a href="contact.html">Contact Page</a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<main>
+        <h2>For all inquirys, please fill out information below.</h2>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jhon Doe" required>
+            <br><br>
 
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="yourEmail@example.com" required>
+            <br><br>
+
+            <label for="tel">Phone Number</label>
+            <input type="tel" id="tel" name="tel" placeholder="(555) 555-5555">
+            <br><br>
+
+            <label for="itype">Type of inquiry</label>
+            <select name="itype" id="itype">
+                <option value="business">Business</option>
+                <option value="personal">Personal</option>
+                <option value="other">Other</option> 
+            </select>
+            <br><br>
+
+            <fieldset>
+                <legend>Preferred contact method:</legend>
+
+                <input type="radio" id="c-email" name="contact" value="email" checked>
+                <label for="c-email">Email</label>
+
+                <input type="radio" id="c-tel" name="contact" value="tel">
+                <label for="c-tel">Phone</label>
+            </fieldset>
+            <br>
+
+            <fieldset>
+                <legend>Preferred time of contact:</legend>
+
+                <input type="checkbox" id="morning" name="tcontact" value="morning">
+                <label for="morning">Morning</label>
+
+                <input type="checkbox" id="afternoon" name="tcontact" value="afternoon">
+                <label for="afternoon">Afternoon</label>
+
+                <input type="checkbox" id="evening" name="tcontact" value="evening">
+                <label for="evening">Evening</label>
+            </fieldset>
+            <br>
+            
+            <label for="msg">Inquiry:</label><br>
+            <textarea id="msg" name="msg" rows="5" cols="40" required></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
 	</main>
 	<footer></footer>
 </body>
