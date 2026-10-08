@@ -1,0 +1,85 @@
+:root {
+
+    --primary-color: #359FA0;
+    --hlink: #8AD6D1;
+    --background: #FFF0C5;
+    --highlight: #FF8C52;
+    --border-color: #5c5c5c;
+    --space: 1rem;
+   
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+form {
+    border: 0.5rem solid var(--border-color);
+    border-radius: 2rem;
+    padding: var(--space);
+    margin-top: var(--space);
+}
+
+main {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: var(--space);
+}
+
+h1 { 
+    font-size: 2.5rem;
+    margin-bottom: 1rem; 
+}
+
+h2 { 
+    font-size: 1.5rem;
+    margin-bottom: 1rem; 
+}
+
+h3 { 
+    font-size: 1rem;
+    margin-bottom: 1rem; 
+}
+
+body { 
+    background: var(--background);
+    color: var(--primary-color);
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: "Times New Roman", Times, serif;
+}
+
+a:link {
+    color: var(--hlink);
+}
+
+a:visited{
+    color: var(--highlight);
+}
+
+input:focus {
+    
+    border-color: var(--highlight);
+}
+
+textarea:focus {
+    
+    border-color: var(--highlight);
+}
+
+#itype:focus {
+    border-color: var(--highlight);
+}
+
+.header{
+    background: var(--hlink);
+    padding: var(--space);
+    color: #ffffff;
+}
+
+select option {
+    background: var(--hlink);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--highlight);
+}
