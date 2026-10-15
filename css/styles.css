@@ -69,6 +69,11 @@ textarea:focus {
     
     border-color: var(--highlight);
 }
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+}
 
 #itype:focus {
     border-color: var(--highlight);
@@ -79,6 +84,7 @@ textarea:focus {
     background: var(--hlink);
     padding: var(--space);
     color: #ffffff;
+    
 }
 
 select option {
@@ -107,23 +113,38 @@ flex-wrap: wrap
 .cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 
 @media (min-width: 38rem) {
-.cards { grid-template-columns: repeat(2, 1fr); }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+
+    .sidebar {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 10rem;
+        position: fixed;
+        padding-top: 1.25rem;
+    }
+        .mainbar {
+        margin-left: 10rem;        
+    }
 }
 
 @media (min-width: 58rem) {
-.cards { grid-template-columns: repeat(3, 1fr); }
+    .cards { grid-template-columns: repeat(3, 1fr); }
+
+    .sidebar {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 10rem;
+        position: fixed;
+        padding-top: 1.25rem;
+    }
+
+    .mainbar {
+        margin-left: 10rem;        
+    }
 }
 
-.sidebar{
-    padding: var(--space);
-    background-color: #111; 
-}
-.mainbar{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space);
-    
-}
 @media (min-width: 48rem) {
     .sidebar {
         top: 0;
@@ -139,3 +160,15 @@ flex-wrap: wrap
     }
 
 }
+
+.sidebar{
+    padding: var(--space);
+    background-color: #111; 
+}
+.mainbar{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space);
+    
+}
+
