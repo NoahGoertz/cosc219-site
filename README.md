@@ -22,6 +22,13 @@ I used AI to help me debug when i was having trouble getting my css file to link
 
 LAB3
 
+36rem - below this point the text in the paragraphs and headers begin to squish into unreadable vertical columns and the sidebar sits at the bottom.
+62rem - below this and the cards will no longer sit in a row of 3.
+
+I used grid in both my cards in the project page and the about page, i have no particular reason other then i tried it and it worked.
+
+
+
 
 
 
