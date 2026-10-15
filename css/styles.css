@@ -24,6 +24,11 @@ main {
     padding: var(--space);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 h1 { 
     font-size: 2.5rem;
     margin-bottom: 1rem; 
@@ -70,6 +75,7 @@ textarea:focus {
 }
 
 .header{
+    
     background: var(--hlink);
     padding: var(--space);
     color: #ffffff;
@@ -95,6 +101,7 @@ justify-content: space-between;
 align-items: center;
 gap: 1rem;
 flex-wrap: wrap
+
 }
 
 .cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
@@ -105,4 +112,30 @@ flex-wrap: wrap
 
 @media (min-width: 58rem) {
 .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+.sidebar{
+    padding: var(--space);
+    background-color: #111; 
+}
+.mainbar{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space);
+    
+}
+@media (min-width: 48rem) {
+    .sidebar {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 10rem;
+        position: fixed;
+        padding-top: 1.25rem;
+    }
+
+    .mainbar {
+        margin-left: 10rem;        
+    }
+
 }
