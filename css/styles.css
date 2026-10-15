@@ -87,3 +87,22 @@ input[type="checkbox"] {
 button:hover {
     background-color: var(--highlight);
 }
+
+nav {
+    
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 1rem;
+flex-wrap: wrap
+}
+
+.cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+
+@media (min-width: 38rem) {
+.cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 58rem) {
+.cards { grid-template-columns: repeat(3, 1fr); }
+}
