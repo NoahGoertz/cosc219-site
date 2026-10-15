@@ -38,9 +38,7 @@ function normalizeGuess(input) {
       return normGuess;
    }else{
       return "";
-   }
-   
-   
+   }   
 }
 
 
@@ -63,9 +61,7 @@ function isValidGuess(input) {
       return true;
    }else{
       return false;
-   }
-   
-
+   }   
 }
 
 
@@ -89,7 +85,6 @@ function alreadyGuessed(letter, guessedLetters) {
    }else{
       return false;
    }
-
 }
 
 
@@ -104,9 +99,10 @@ function alreadyGuessed(letter, guessedLetters) {
    ---------------------------------------------------------------------- */
 
 function isCorrect(letter, word) {
+
    const newLetter = letter.trim().toLowerCase();
 
-      if(word.includes(newLetter)){
+   if(word.includes(newLetter)){
       return true;
    }else{
       return false;
@@ -132,8 +128,6 @@ function livesAfterGuess(lives, correct) {
    }else {
       return lives;
    }
-
-
 }
 
 
@@ -173,6 +167,21 @@ return (word.length * 10) + (lives * 5);
 
 function statusMessage(word, guessedLetters, lives) {
 
+   if(lives <= 0){
+      return "Out of lives. The word was \"" +  word + "\".";
+   }
+   if(hasWon(word, guessedLetters) === true){
+      return "You got it! \"" + word + "\" with " + lives + " lives left.";
+   }
+   if(guessedLetters.length === 0){
+      return "6 lives left. Guessed: nothing yet";
+   }
+   if(lives === 1){
+      return "1 life left. Guessed: " + guessedLetters;
+   }
+   if(guessedLetters.length >= 1){
+      return lives + " lives left. Guessed: " + guessedLetters;
+   }
 }
 
 
@@ -183,7 +192,15 @@ function statusMessage(word, guessedLetters, lives) {
 
 function gradeFor(score) {
 
+   if(score >= 90) {return "A";}
+   if(score >= 80) {return "B";}
+   if(score >= 70) {return "C";}
+   if(score >= 60) {return "D";}
+
+   return "F";
+
 }
+
 
 
 /* ======================================================================
@@ -203,3 +220,9 @@ function revealWord(word, guessedLetters) {
 function hasWon(word, guessedLetters) {
   return !revealWord(word, guessedLetters).includes("_");
 }
+
+
+
+// C2:
+//    1. Nothing broke when I swaped submitGuess and guessedLetters
+//    2. It calls isValidGuess 1st because their is no need to normilize a guess that is not valid
