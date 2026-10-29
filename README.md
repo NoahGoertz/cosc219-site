@@ -30,6 +30,10 @@ I used grid in both my cards in the project page and the about page, i have no p
 
 
 
+LAB5
 
+The report tells me about the total number of trails, how many of them are open, how many of them are closed, the totla km of the open trails, the longest open trail by km, and a count of all the dificulty levels.
+The trap that caught me the longest was returning the accumilator at the end of each pass.
+I used ai to help me out of a trap when i was having trouble returning the countByRating() as an object.
 
 
