@@ -101,7 +101,6 @@ function findByName(trails, name) {
 
 function sortedByDistance(trails) {
   return [...trails].sort((a,b) => a.km - b.km);
-
 }
 
 
@@ -115,7 +114,7 @@ function sortedByDistance(trails) {
    ---------------------------------------------------------------------- */
 
 function anyClosed(trails) {
-
+  return trails.some(n => n.closed);
 }
 
 
@@ -126,6 +125,7 @@ function anyClosed(trails) {
    ---------------------------------------------------------------------- */
 
 function allUnder(trails, limit) {
+  return trails.every(n => n.km < limit);
 
 }
 
@@ -140,7 +140,7 @@ function allUnder(trails, limit) {
    ---------------------------------------------------------------------- */
 
 function totalDistance(trails) {
-
+  return Math.round(trails.reduce((sum, n) => sum + n.km, 0) * 10) / 10;
 }
 
 
@@ -153,7 +153,11 @@ function totalDistance(trails) {
    ---------------------------------------------------------------------- */
 
 function longestTrail(trails) {
-
+  if (trails.length === 0) {
+    return undefined;
+  }else {
+    return trails.reduce((best, n) => n.km > best.km ? n : best);
+  }  
 }
 
 
@@ -167,7 +171,7 @@ function longestTrail(trails) {
    ---------------------------------------------------------------------- */
 
 function countByRating(trails) {
-
+  return trails.reduce((total, n) => {total[n.rating] = (total[n.rating] ?? 0) + 1; return total; }, {});
 }
 
 
@@ -183,7 +187,7 @@ function countByRating(trails) {
    ---------------------------------------------------------------------- */
 
 function openDistance(trails) {
-
+  
 }
 
 
@@ -197,7 +201,7 @@ function openDistance(trails) {
    ---------------------------------------------------------------------- */
 
 function summaryLines(trails) {
-
+  
 }
 
 
