@@ -37,3 +37,8 @@ The trap that caught me the longest was returning the accumilator at the end of 
 I used ai to help me out of a trap when i was having trouble returning the countByRating() as an object.
 
 
+LAB6
+
+The #trails is private and not public so that it can not be accessed by any file or script outside the class, that potentially alter the internal data as instead of just a coppy from the getter.
+What suprised me from part A was that { x: 1} === { x: 1} are 2 differnt objects and will return false.
+I used ai to help me fix bugs i had when building the fromObject() method.
