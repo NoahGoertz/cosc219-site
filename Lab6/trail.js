@@ -103,7 +103,7 @@ export class Trail {
        Trail.fromObject({ name: "Z", km: 3, rating: "easy" }).gain  →  0
      ---------------------------------------------------------------- */
   static fromObject(obj) {
-   const  {name, km, rating, gain = 0, closed} = obj;
+   const {name, km, rating, gain = 0,} = obj;
    const trail = new Trail(name, km, rating, gain);
    return trail;
   }
