@@ -34,8 +34,46 @@
    function an <img onerror> and checks nothing was created.
    ---------------------------------------------------------------------- */
 
-export function createTrailItem(trail) {
+export function createTrailItem(trail) { 
+  const li = document.createElement("li");
+  li.classList.add("trail")
+  if(trail.closed){
+    li.classList.add("is-closed")
+  }
+  li.dataset.id = trail.id;
 
+  const nameSpan = document.createElement("span");
+  nameSpan.className = "trail-name";
+  nameSpan.textContent = trail.name;
+
+  const kmSpan = document.createElement("span");
+  kmSpan.className = "trail-km";
+  kmSpan.textContent = `${trail.km} km`;
+
+  const toggleBtn = document.createElement("button");
+  toggleBtn.type = "button";
+  toggleBtn.dataset.action = "toggle";
+
+  const toggleLabel = document.createElement("span");
+  toggleLabel.className = "btn-label";
+  toggleLabel.textContent = trail.closed ? "Reopen" : "Close";
+
+  toggleBtn.append(toggleLabel);
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.type = "button";
+  deleteBtn.dataset.action = "delete";
+  deleteBtn.setAttribute("aria-label", `Delete ${trail.name}`);
+
+  const deleteLabel = document.createElement("span");
+  deleteLabel.className = "btn-label";
+  deleteLabel.textContent = "Delete";
+
+  deleteBtn.append(deleteLabel);
+
+  li.append(nameSpan, kmSpan, toggleBtn, deleteBtn);
+
+  return li;
 }
 
 
@@ -46,6 +84,13 @@ export function createTrailItem(trail) {
    ---------------------------------------------------------------------- */
 
 export function renderTrails(trails, container) {
+  const item = trails.map(createTrailItem);
+
+  if(!trails){
+    item = [];
+  }
+
+  container.replaceChildren(...item);
 
 }
 
@@ -60,5 +105,13 @@ export function renderTrails(trails, container) {
    ---------------------------------------------------------------------- */
 
 export function summaryText(trails) {
+  if(trails.length === 0){
+    return "No trails yet. Add one above."
+  }
 
+  const openTrails = trails.filter(n => !n.closed).length;
+  const totalKm = Math.round(trails.reduce((sum, n) => sum + n.km, 0) * 10) / 10;
+  const plural = trails.length === 1 ? "trail" : "trails";
+
+  return `${trails.length} ${plural}, ${openTrails} open, ${totalKm} km total.`
 }
