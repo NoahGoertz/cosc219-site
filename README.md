@@ -29,7 +29,6 @@ I used grid in both my cards in the project page and the about page, i have no p
 
 
 
-
 LAB5
 
 The report tells me about the total number of trails, how many of them are open, how many of them are closed, the totla km of the open trails, the longest open trail by km, and a count of all the dificulty levels.
@@ -42,3 +41,10 @@ LAB6
 The #trails is private and not public so that it can not be accessed by any file or script outside the class, that potentially alter the internal data as instead of just a coppy from the getter.
 What suprised me from part A was that { x: 1} === { x: 1} are 2 differnt objects and will return false.
 I used ai to help me fix bugs i had when building the fromObject() method.
+
+
+LAB7
+
+The listener is on the list rather then the buttons because renderTrails destroys the buttons every time the list redraws.
+If loadTrails does not guard against corrupt data app.js would crash and throw an uncaught syntax error.
+I used AI in part C to help layout the instruction more clearly as i was confused about how to add the Event Listeners.
